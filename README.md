@@ -44,9 +44,7 @@ To build and run the application, execute the following command, in the repo roo
 docker-compose up --build
 ```
 
-This will:
-  - Start the backend on http://localhost:8080
-  - Serve the frontend at http://localhost:4200
+This will start the backend and serve the frontend.
 
 If you wish to stop and remove the container, execute the following command, in the repo root `LabSeq/`:
 ```shell script
@@ -62,10 +60,14 @@ Once the container is running, you can:
    - Open your browser to → [localhost](http://localhost:4200)
    - Enter an integer `n` (0–300 000) and click `Compute`
    - See `l(n)` displayed, or an error message if out of range
-
+     
+- **Access the Backend API directly**:  
+   - Open your browser to → http://localhost:8080/labseq/{n}
+   - Replace `n` with a whole number between 0 and 300000
+   - See `l(n)` displayed, or an error message if out of range
+     
 - **View the Swagger UI**:  
   - Interactive API docs → [Swagger](http://localhost:8080/swagger)
-
 
 - **Get OpenAPI documentation**:  
   - OpenAPI API's documentation download → [OpenAPI](http://localhost:8080/openapi)
