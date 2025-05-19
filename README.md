@@ -27,6 +27,8 @@ Before you begin, ensure you have the following installed on your machine:
 
 If you don't have these, install by downloading [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 
+**NOTE:** Make sure Docker Engine is running before proceeding. On Docker Desktop, open the app and ensure it’s active.
+
 ## Getting Started
 
 ---
