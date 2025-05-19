@@ -39,14 +39,14 @@ $ git clone https://github.com/Martelao703/LabSeq.git
 ## Build & Run  
 
 ---
-To build and run the application, execute the following command, in the repo root `LabSeq/`:
+To build and run the application, run the following command, in the repo root `LabSeq/`:
 ```shell script
 docker-compose up --build
 ```
 
 This will start the backend and serve the frontend.
 
-If you wish to stop and remove the container, execute the following command, in the repo root `LabSeq/`:
+If you wish to stop and remove the container, run the following command, in the repo root `LabSeq/`:
 ```shell script
 docker-compose down
 ```
@@ -81,3 +81,8 @@ All Java tests live under backend/src/test/java. They include:
   - Performance test verifying that l(100_000) completes in under 10 seconds
 - LabSeqResourceTest class
   - Integration tests of the REST API endpoint using Quarkus + RestAssured
+
+To run the tests, run the following command, in the repo root `LabSeq/`:
+```shell script
+mvn -f backend clean test
+```
