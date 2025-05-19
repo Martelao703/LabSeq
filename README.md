@@ -25,7 +25,7 @@ Before you begin, ensure you have the following installed on your machine:
 - Docker 
 - Docker Compose
 
-If you don't have these, install by downloading [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+If you don't have these, install by downloading [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 
 ## Getting Started
 
@@ -69,3 +69,13 @@ Once the container is running, you can:
 
 - **Get OpenAPI documentation**:  
   - OpenAPI API's documentation download → [OpenAPI](http://localhost:8080/openapi)
+    
+## Backend Testing
+
+---
+All Java tests live under backend/src/test/java. They include:
+- LabSeqServiceTest class
+  - Unit tests for the sequence logic
+  - Performance test verifying that l(100_000) completes in under 10 seconds
+- LabSeqResourceTest class
+  - Integration tests of the REST API endpoint using Quarkus + RestAssured
