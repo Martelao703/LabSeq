@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend        # backend Dockerfile
+    image: labseq-backend
+    ports:
+      - "8080:8080"             # host:container
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail http://localhost:8080/q/health || exit 1"]
+      interval: 10s
+      retries: 3
+
+  frontend:
+    build:
+      context: ./frontend       # frontend Dockerfile
+    image: labseq-frontend
+    depends_on:
+      backend:
+        condition: service_healthy # wait for backend to be healthy
+    ports:
+      - "4200:80"
