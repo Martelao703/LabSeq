@@ -26,6 +26,15 @@ Before you begin, ensure you have the following installed on your machine:
 - Docker Compose
 
 If you don't have these, install by downloading [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+
+## Getting Started
+
+---
+
+Navigate to a folder you wish to clone this repo into, and run the following command:
+```shell script
+$ git clone https://github.com/Martelao703/LabSeq.git
+```
   
 ## Build & Run  
 
