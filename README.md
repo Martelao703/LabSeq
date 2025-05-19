@@ -41,7 +41,7 @@ $ git clone https://github.com/Martelao703/LabSeq.git
 ---
 To build and run the application, run the following command, in the repo root `LabSeq/`:
 ```shell script
-docker-compose up --build
+docker-compose up --build -d
 ```
 
 This will start the backend and serve the frontend.
@@ -63,7 +63,7 @@ Once the container is running, you can:
      
 - **Access the Backend API directly**:  
    - Open your browser to → http://localhost:8080/labseq/{n}
-   - Replace `n` with a whole number between 0 and 300000
+   - Replace `n` with a whole number between 0 and 300 000
    - See `l(n)` displayed, or an error message if out of range
      
 - **View the Swagger UI**:  
@@ -78,7 +78,7 @@ Once the container is running, you can:
 All Java tests live under backend/src/test/java. They include:
 - LabSeqServiceTest class
   - Unit tests for the sequence logic
-  - Performance test verifying that l(100_000) completes in under 10 seconds
+  - Performance test verifying that l(100 000) completes in under 10 seconds
 - LabSeqResourceTest class
   - Integration tests of the REST API endpoint using Quarkus + RestAssured
 
@@ -86,3 +86,8 @@ To run the tests, run the following command, in the repo root `LabSeq/`:
 ```shell script
 mvn -f backend clean test
 ```
+
+## Application Limits
+
+---
+Due to memory constraints, inputs larger than n = 300 000 may cause heap exhaustion and crash the application. To prevent this, the backend currently rejects any input greater than n = 300 000.
