@@ -1,0 +1,20 @@
+<div>
+  <h2>LabSeq Calculator</h2>
+
+  <label>
+    Enter n (0-{{ MAX_N }}):
+    <!-- step="1" discourages floats in number pickers -->
+    <input type="number" [(ngModel)]="inputN" min="0" step="1" />
+  </label>
+
+  <button (click)="fetch()">Compute</button>
+
+  <!-- Only show after the fetch -->
+  <div *ngIf="result !== undefined && lastComputedIndex !== undefined" class="result">
+    <strong>l({{ lastComputedIndex }}) = {{ result }}</strong>
+  </div>
+
+  <div *ngIf="errorMsg" class="error">
+    Error: {{ errorMsg }}
+  </div>
+</div>
